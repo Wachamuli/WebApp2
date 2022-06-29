@@ -1,0 +1,168 @@
+﻿@page
+@model WebApp2.Pages.Ca.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].NumberOfPassages)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Kind)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].BodyWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Sunroof)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Tire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Chassis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Wheels)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Engine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Picture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Enabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].MaxStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].MinStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Mark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Supplier)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Car) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfPassages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kind)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sunroof)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chassis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wheels)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Engine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Picture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mark.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

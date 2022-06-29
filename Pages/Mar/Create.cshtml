@@ -1,0 +1,49 @@
+﻿@page
+@model WebApp2.Pages.Mar.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Mark</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Mark.Name" class="control-label"></label>
+                <input asp-for="Mark.Name" class="form-control" />
+                <span asp-validation-for="Mark.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mark.Description" class="control-label"></label>
+                <input asp-for="Mark.Description" class="form-control" />
+                <span asp-validation-for="Mark.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Mark.Enabled" /> @Html.DisplayNameFor(model => model.Mark.Enabled)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mark.CreatedDate" class="control-label"></label>
+                <input asp-for="Mark.CreatedDate" class="form-control" />
+                <span asp-validation-for="Mark.CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
